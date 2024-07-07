@@ -22,20 +22,21 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+# テーブル設計
 
 ## users テーブル
 
 | Column             | Type   | Options     |
-|--------------------| ------ | ----------- |
+| ------------------ | ------ | ----------- |
 | name               | string | null: false |
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false |
 
 ### Association
 
-_ has_many :room_users
-_ has_many :rooms. through: :room_users
-_ has_many :messages
+- has_many :room_users
+- has_many :rooms, through: :room_users
+- has_many :messages
 
 ## rooms テーブル
 
@@ -52,7 +53,7 @@ _ has_many :messages
 ## room_users テーブル
 
 | Column | Type       | Options                        |
-| ------ | ---------  | ------------------------------ |
+| ------ | ---------- | ------------------------------ |
 | user   | references | null: false, foreign_key: true |
 | room   | references | null: false, foreign_key: true |
 
